@@ -1,0 +1,332 @@
+@import url("https://fonts.googleapis.com/css?family=Dekko:wght@200;300;400;500;600;700&display=swap");
+:root{
+  --black: #000;
+  --red: red;
+  --light-color: #666;
+  --white: #fff;
+  --border: .1rem solid rgba(0,0,0,.1);
+  --border-hover:.rem solid var(var(--black));
+  --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Dekko", sans-serif;
+    transition:all .2s linear;
+    transition: width none;
+    text-decoration: none;
+}
+
+html{
+    font-size: 65.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5rem;
+    scroll-behavior: smooth;
+}
+
+section{
+    padding:5rem 9%;
+}
+
+.header{
+    position: sticky;
+    top:0; left:0; right:0;
+    background-color: var(--white);
+    z-index: 1000;
+    border: 7px solid black;
+}
+
+.header .flex{
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0;
+    max-width: 1200px;
+    position: relative;
+}
+
+.header .flex .navbar ul{
+    list-style: none;
+}
+
+.header .flex .navbar ul li{
+    float: left;
+    position: relative;
+    border-inline-start: 7px solid black;
+}
+
+.header .flex .navbar ul li a{
+    font-size: 4rem;
+    padding:1rem 1.5rem;
+    display: block;
+    color:var(--black);
+    text-transform: capitalize;
+}
+
+.header .flex .navbar ul li a:hover{
+    background-color: var(--black);
+    color:var(--white);
+}
+
+.header .flex .navbar ul li ul{
+    position: absolute;
+    left:0;
+    width: 15rem;
+    background-color: var(--white);
+    animation: fadeIn .2s linear;
+    display: none;
+}
+/*==========home ================*/
+
+.home{
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+}
+.home .row{
+    display: flex;
+    align-items: center;
+    position: relative;
+   flex-wrap: wrap;
+}
+.home .row .content{
+     position: relative;
+     flex:2 2 40rem;
+     background-color: var(--white);
+     border: .5rem solid black;
+     padding: 10rem;
+     left: 10%
+}
+
+.btn1{
+    background-image: url(../TAYMPERS/img/button.png);
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    padding:.5rem 1rem;
+    color: var(--black);
+    cursor: pointer;
+    font-weight: 500;
+    background-size: contain; 
+    border: none;
+    width: 60rem;
+    height: 18rem;
+}
+
+.home .row .book-category{
+    flex:1 1 42rem;
+    text-align: center;
+    list-style: none;
+}
+
+.home .row .book-category a{
+    font-size: 4rem;
+    color: var(--black);
+    -webkit-text-stroke: 2px var(--white);
+   white-space: nowrap;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+      position: absolute;
+    right: 15%;
+}
+
+.home .row .book-category a:hover{
+    transform: scale(1.1);
+   position: absolute;
+   right: 15%;
+}
+
+.home .row .content h3{
+    color: var(--black);
+    font-size: 12;
+}
+
+.home .row .book-category img{
+    position: absolute;
+    right: 15%;
+}
+
+.home .row .content img{
+    height: 19rem;
+    position: absolute;
+    top: -9%;
+    left: 10;
+}
+
+.home .row .content p{
+    color: var(--black);
+    font-size: 30px;
+    line-height: 1;
+    padding:1rem 0;
+    margin: 20px;
+}
+
+.border{
+    height: 80rem;
+    flex:auto;
+}
+.about .content{
+    flex:1 1 42rem;
+    background-color: var(--white);
+    border: 1rem solid black;
+}
+.about p{
+    font-size: 3.25rem;
+    text-align: justify;
+    margin: 5rem;
+}
+.footer{
+    background-color: var(--white);
+    height: 10rem;
+}
+ 
+.footer .credit{
+    text-align: center;
+    font-size: 2rem;
+    color:var(--light-color);
+}
+ 
+.footer .credit span{
+    color:var(--black);
+}
+ 
+/*==========LOGIN AND REGISTER ================*/
+.infinity-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+@media(min-width: 764px) {
+  
+    .infinity-form {
+        box-shadow: 0 3px 6px hsla(0, 0%, 0%, 0.1);
+        border-radius: 40px;
+        width: 34rem;
+        
+ 
+}
+
+.infinity-form{
+    background: white;
+}
+
+.infinity-form h1 {
+    font-weight: bold;
+}
+
+.infinity-form .form-input
+{
+    position: relative;
+}
+
+.infinity-form .form-input input
+{
+    width: 100%;
+    margin-bottom: 20px;
+    height: 40px;
+    border: none;
+    border-bottom: 2px solid #777;
+    outline: none;
+    background: transparent;
+    padding-left: 40px;
+    font-weight: bold;
+    color: #777;
+    font-size: medium;
+    
+}
+
+.infinity-form .form-input span {
+    position: absolute;
+    top: 8px;
+    padding-left: 10px;
+    color: #777;
+}
+
+.infinity-form .form-input input::placeholder {
+    padding-left: 0px;
+}
+
+.infinity-form .form-input input:focus,
+.infinity-form .form-input input:valid
+{
+    border-bottom: 2px solid #57b894;
+}
+
+.infinity-form .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #8966c9 !important;
+    border:0px;
+    font-size: medium;
+  
+}
+
+
+
+.infinity-form button[type="submit"] {
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    background: linear-gradient(45deg, #8966c9, #824ea5);
+    color: #fff;
+    font-weight: bold;
+    transition: 0.5s;
+    margin-bottom: 10px;
+    font-size: medium;
+   
+}
+
+.infinity-form button[type="submit"]:hover {
+    background: linear-gradient(45deg,#8966c9, #7957b8);
+}
+
+.forget-link , .login-link , .register-link {
+    color: #8966c9;
+    font-weight: bold;
+    font-size: small;
+}
+.mb-5 {
+    font-size: small;
+}
+.custom-control-label::before .custom-control-input:checked{
+    font-size: medium;
+}
+
+.forget-link:hover , .login-link:hover , .register-link:hover {
+    color: #824ea5;
+    text-decoration: none;
+}
+
+
+.input .input-text a span{
+    margin-left: 140px;
+   
+}
+
+.input1 .input-text a span{
+    margin-left: 140px;
+}
+
+.input .input-text i{
+    font-size: 1.3em;
+}
+
+.form-input i {
+    font-size: 1.3em;
+}
+
+.reset-form .px-3 p{
+    font-size: medium;
+}
+
+}
