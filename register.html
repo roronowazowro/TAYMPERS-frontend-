@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<link href="style.css" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Dekko' rel='stylesheet'>
+     
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <style>
+      body {
+        background-image: url('img/bg.png'); 
+        background-size: cover; 
+      }
+    </style>
+
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+</head>
+<body>
+	<!--header -->
+	<header class="header">
+		<div class="flex">
+		   <a href="index.html">
+			  <img src="img/logo1.png" height="100" alt="Logo">
+		  </a>
+			<nav class="navbar">
+				<ul>
+					<li><a href="index.html">HOME</a></li>
+					<li><a href="#about">ABOUT</a></li>
+					<li><a href="library.html">LIBRARY</a></li>
+					<li><a href="login.html">LOG-IN</a></li>
+					<li><a href="register.html">REGISTER</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+  	<!--header -->
+
+
+	<div class="container infinity-container">
+		<div class="row">
+			<div class="col-md-1 infinity-left-space"></div>
+
+			<!-- FORM BEGIN -->
+			<div class="col-lg-12 col-md-12 col-sm-14 col-xs-14 text-center infinity-form">
+				<!-- Company Logo -->
+                <!--
+				<div class="text-center mb-3 mt-5">
+					<img src="OURLOGO.PNG" width="150px">
+				</div>
+                -->
+				<div class="text-center mb-4">
+                    <br>
+                    <br>
+					<h1>Create an account</h1>
+				</div>
+				<!-- Form -->
+				<form class="px-3">
+					<!-- Input Box -->
+					<div class="form-input">
+						<span><i class="fa fa-user"></i></span>
+						<input type="text" name="" placeholder="Full Name" tabindex="10"required>
+					</div>
+
+                    <div class="form-input">
+						<span><i class="fa fa-user"></i></span>
+						<input type="text" name="" placeholder="Username" tabindex="10"required>
+					</div>
+
+					<div class="form-input">
+						<span><i class="fa fa-envelope"></i></span>
+						<input type="email" name="" placeholder="Email Address" tabindex="10"required>
+					</div>
+
+                    <div class="form-input">
+						<span><i class="fa fa-lock"></i></span>
+						<input type="number" name="" placeholder="Age" required>
+					</div>
+
+					<div class="form-input">
+						<span><i class="fa fa-lock"></i></span>
+						<input type="password" id="pass" name="" placeholder="Input Password" required>
+
+						<div class="input">
+							<div class="input-text">
+								<a href="#" class="text-dark" id="icon-click">
+									<span><i class="fa fa-eye" id="iconeye"></i></span>
+								</a>
+							</div>
+						</div>
+					</div>
+
+                    <div class="form-input">
+						<span><i class="fa fa-lock"></i></span>
+						<input type="password" id="pass1" name="" placeholder="Repeat Password" required>
+
+						<div class="input1">
+							<div class="input-text">
+								<a href="#" class="text-dark" id="icon-click1">
+									<span><i class="fa fa-eye" id="iconeye1"></i></span>
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- Register Button -->
+		            <div class="mb-3"> 
+						<button type="submit" class="btn btn-block">Register</button>
+					</div>
+					
+					<div class="text-center mb-5" style="color: #777;">Already have an account? 
+						<a class="login-link" href="login.html">Login here</a>
+			       	</div>
+				</form>
+			</div>
+			<!-- FORM END -->
+
+			<div class="col-md-1 infinity-right-space"></div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#icon-click").click(function(){
+				$("#iconeye").toggleClass('fa-eye-slash');
+
+				var input = $("#pass");
+				if (input.attr("type")==="password"){
+					input.attr("type", "text");
+				}
+				else {
+					input.attr("type", "password");
+				}
+			});
+
+		});
+
+		$(document).ready(function(){
+			$("#icon-click1").click(function(){
+				$("#iconeye1").toggleClass('fa-eye-slash');
+
+				var input = $("#pass1");
+				if (input.attr("type")==="password"){
+					input.attr("type", "text");
+				}
+				else {
+					input.attr("type", "password");
+				}
+			});
+
+		});
+	</script>
+</body>
+</html>
