@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dekko&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href="style.css" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Dekko' rel='stylesheet'>
+     
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <style>
+      body {
+        background-image: url('img/bg.png'); 
+        background-size: cover; 
+      }
+    </style>
+	
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <style>
+    /* CSS styles */
+    body {
+      font-family: Dekko, sans-serif;
+    }
+    .profile-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .profile-container h2 {
+      margin-top: 0;
+      text-align: center;
+      font-family: Dekko, sans-serif;
+    }
+    .profile-picture {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .profile-picture img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+    }
+    .profile-picture label {
+      font-size: small;
+    }
+    .profile-form {
+      margin-bottom: 20px;
+    }
+    .profile-form input[type="text"],
+    .profile-form input[type="password"],
+    .profile-form textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: medium;
+    }
+    .profile-form textarea {
+      height: 100px;
+    }
+    .profile-form label {
+      font-size: medium;
+    }
+    .btn-container {
+      text-align: center;
+    }
+    .btn {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: Dekko, sans-serif;
+      font-size: small;
+    }
+    .btn.delete {
+      background-color: #dc3545;
+      font-family: Dekko, sans-serif;
+      font-size: small;
+    }
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.4);
+    }
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 50%;
+      border-radius: 8px;
+      text-align: center;
+      position: relative;
+    }
+    .close {
+      color: #aaa;
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+    }
+
+  </style>
+</head>
+<body>
+    <!--header -->
+   <header class="header">
+      <div class="flex">
+         <a href="index.html">
+            <img src="img/logo1.png" height="100" alt="Logo">
+        </a>
+          <nav class="navbar">
+              <ul>
+                  <li><a href="index2.html">HOME</a></li>
+                  <li><a href="#about">ABOUT</a></li>
+                  <li><a href="library.html">LIBRARY</a></li>
+                  <li><a href="profile.html"><img src="img/accbtn.png" height="55"></a></li>
+              </ul>
+          </nav>
+      </div>
+  </header>
+
+<!--header -->
+   <br>
+    <div class="profile-container">
+        <h2>User Profile</h2>
+        <div class="profile-picture">
+            <img id="profile-pic" src="img/profile.png" alt="Profile Picture">
+            <div><label for="profile-image-input"><i class="fas fa-camera"></i> Update Profile Picture</label></div>
+            <input type="file" id="profile-image-input" style="display: none;">
+        </div>
+        <form class="profile-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username">
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" placeholder="Enter your email">
+
+            <label for="password">New Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your new password">
+
+            <label for="confirm-password">Confirm New Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your new password">
+
+            <label for="bio">Bio:</label>
+            <textarea id="bio" name="bio" placeholder="Write something about yourself"></textarea>
+        </form>
+        <div class="btn-container">
+            <button class="btn" id="update-profile-btn"><i class="fas fa-user-edit"></i> Update Profile</button>
+            <button class="btn delete" id="delete-btn"><i class="fas fa-trash-alt"></i> Delete Account</button>
+        </div>
+    </div>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Are you sure you want to delete your account? This action cannot be undone.</p>
+      <button class="btn delete" id="confirm-delete-btn">Yes, Delete Account</button>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript code
+    document.getElementById('update-profile-btn').addEventListener('click', function() {
+      // Add your update profile logic here
+      alert('Profile updated successfully!');
+    });
+
+    // Display modal when delete button is clicked
+    document.getElementById('delete-btn').addEventListener('click', function() {
+      var modal = document.getElementById('myModal');
+      modal.style.display = 'block';
+    });
+
+    // Close the modal when the close button or outside modal area is clicked
+    var closeBtn = document.getElementsByClassName('close')[0];
+    window.onclick = function(event) {
+      var modal = document.getElementById('myModal');
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    }
+    closeBtn.onclick = function() {
+      var modal = document.getElementById('myModal');
+      modal.style.display = 'none';
+    }
+
+    // Delete account if confirmed
+    document.getElementById('confirm-delete-btn').addEventListener('click', function() {
+      // Add your delete account logic here
+      alert('Account deleted successfully!');
+      var modal = document.getElementById('myModal');
+      modal.style.display = 'none';
+      // Redirect or perform any other action after account deletion
+    });
+  </script>
+</body>
+</html>
